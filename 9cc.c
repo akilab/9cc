@@ -8,7 +8,6 @@ int main(int argc, char **argv){
     }
 
     char *p = argv[1];
-    printf("%s\n", p);
 
     printf(".intel_syntax noprefix\n");
     printf(".global main\n");
@@ -16,7 +15,6 @@ int main(int argc, char **argv){
     printf("    mov rax, %ld\n", strtol(p, &p, 10));
     
     while (*p){
-        printf("*p = %c\n", *p);
         if (*p == '+'){
             p++;
             printf("    add rax, %ld\n", strtol(p, &p, 10));
